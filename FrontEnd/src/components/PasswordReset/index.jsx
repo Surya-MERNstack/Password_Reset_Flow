@@ -13,7 +13,7 @@ const PasswordReset = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = `http://localhost:8010/api/password-reset/${id}/${token}`;
+      const url = `https://passwordresetflows.onrender.com/api/password-reset/${id}/${token}`;
       const { data } = await axios.put(url, { password });
       setMsg(data.message);
       setError("");
