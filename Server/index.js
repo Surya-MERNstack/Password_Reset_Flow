@@ -19,5 +19,6 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/password-reset", passwordResetRoutes);
 
+
 const port = process.env.PORT;
 app.listen(port, console.log(`Listening on port http://localhost${port}`));

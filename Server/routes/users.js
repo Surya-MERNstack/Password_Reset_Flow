@@ -38,14 +38,17 @@ router.post("/", async (req, res) => {
 	}
 });
 
-router.get('/data',async(req ,res) => {
-	try{
-		const user = await User.findOne(Token);
-	res.status(200).json(user);
-	}catch(err){
-		res.send(400).json({message : "Error" ,err});
+router.get("/data", async (req, res) => {
+	try {
+	  const users = await User.find();
+	  res.status(200).json(users);
+	} catch (error) {
+	  res.status(500).json({ message: "Internal Server Error", error });
 	}
-})
+  });
+  
+
+  
 
 router.get("/:id/verify/:token/", async (req, res) => {
 	try {
